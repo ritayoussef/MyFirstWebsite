@@ -22,6 +22,9 @@ Age Verification: Ensures that users under 18 get appropriate instructions.
 File Structure
 
 index.html: Main page where users provide their details.
+
 finalPage.php: Processes the user's order and displays confirmation.
+
 style.css: Contains the styling for the application.
+
 assets/: Directory for images used in the project.
