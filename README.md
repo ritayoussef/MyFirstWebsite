@@ -1,25 +1,33 @@
 # MyFirstWebsite
 
-Make Orders Here
+## Make Orders Here
 
 Welcome to the "Make Orders Here" web application! This project is designed to allow users to make orders for various products through a simple and interactive interface.
 
-Project Overview
+## Project Overview
 
-This application consists of two main pages:
+### This application consists of two main pages:
 
-Product Selection Page: Allows users to choose between different products based on their gender and proceed to place an order.
-Order Confirmation Page: Displays a confirmation message based on the user's input and handles age verification for order completion.
+### Product Selection Page: 
 
-Features
+Allows users to choose between different products based on their gender and proceed to place an order.
 
-Product Selection: Users can select a product and view its details.
+### Order Confirmation Page: 
 
-Order Confirmation: Users receive a confirmation message with details about their order.
+Displays a confirmation message based on the user's input and handles age verification for order completion.
 
-Age Verification: Ensures that users under 18 get appropriate instructions.
+## Features
 
-File Structure
+### Product Selection: 
+Users can select a product and view its details.
+
+### Order Confirmation: 
+Users receive a confirmation message with details about their order.
+
+### Age Verification: 
+Ensures that users under 18 get appropriate instructions.
+
+## File Structure
 
 index.html: Main page where users provide their details.
 
