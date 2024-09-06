@@ -1,0 +1,145 @@
+<html>
+      
+    <head>
+        
+<link rel="stylesheet" href="./style.css">
+<title> Make Orders Here ;) </title>  
+<script src = "./ageVerification.js"> </script>
+        
+<script>
+        
+function GetCookie (name) 
+{
+var a = name + "=";
+var b = a.length;
+var c = document.cookie.length;
+var i = 0;
+while (i < c) 
+{
+var j = i + b;
+if (document.cookie.substring(i, j) == a)
+return getCookieVal (j);
+i = document.cookie.indexOf(" ", i) + 1;
+if (i == 0) 
+break;
+}
+return null;
+}
+
+function SetCookie (name, value) 
+{
+var d = SetCookie.arguments;
+var e = SetCookie.arguments.length;
+var expires = (e > 2) ? d[2] : null;
+var path = (e > 3) ? d[3] : null;
+var domain = (e > 4) ? d[4] : null;
+var secure = (e > 5) ? d[5] : false;
+document.cookie = name + "=" + escape (value) +
+((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+((path == null) ? "" : ("; path=" + path)) +
+((domain == null) ? "" : ("; domain=" + domain)) +
+((secure == true) ? "; secure" : "");
+}
+
+function DeleteCookie (name) 
+{
+var exp = new Date();
+exp.setTime (exp.getTime() - 1);
+var cval = GetCookie (name);
+document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+}
+var expDays = 30;
+var exp = new Date();
+exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+
+function go()
+{
+var count = GetCookie('count')
+if(count == null) 
+{
+    
+SetCookie('count','1')
+return 1
+}
+
+else 
+{
+var newcount = parseInt(count) + 1;
+DeleteCookie('count')
+SetCookie('count',newcount,exp)
+return count
+}
+
+}
+
+function getCookieVal(offset) 
+{
+var endstr = document.cookie.indexOf (";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+</script>
+       
+ 
+   </head>
+ 
+ 
+    <body LANGUAGE="JavaScript">
+        <script>document.write("The number of times you have visited this page: <b>" + go())</script>   
+           
+            <nav>
+   <img id="logo" src="./assets/order-1024x1024.jpg" alt="Make Orders Here ;) logo">
+       
+        <h1>Make Your Orders Here ;) </h1>
+        <ul class="menu">
+            <li><a href="#">Tour</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact Us</a></li>
+            
+        </ul>
+ 
+ 
+    </nav>
+     <section id="hero" class="wrapper">
+        <form id = "userInput" onsubmit = "ageVerification()"  >  
+       
+                 
+                   <h2>What is your name?</h2>  
+                    <br> <input type="text" name="yourname" required><br>
+                    <br>
+                   <h2> How old are you ? </h2>  
+                   <input type = "number"  id = "age" name = "yourage" required><br>
+                 
+                   <h2>Address/City:</h2>  
+                    <br> <input type= "text" name= "youraddress" required>   <br>
+                 
+                   <h2>What sex are you?</h2>  
+              
+                   
+  <input type="radio" id="Female" name="yoursexe" value="Female" required>  
+  <label for ="Male" >Female</label><br> 
+   
+  <input type="radio" id="Male" name="yoursexe" value= "Male" required > 
+  <label for ="Male" >Male</label><br> 
+ 
+                   
+          
+                
+     
+               <br> <input type="submit" value="Proceed with order"> <br>
+        </form>
+        
+   </section>
+         <section id="footer">
+        <footer>
+         <div class = "MakeOrder">  
+         <h3 class = "MakeOrder">Make Orders Here ;) </h3>
+        <p class = "MakeOrder">@ 2022 all rights reserved</p>
+        </div>
+            
+        </footer>
+        </section>
+ </body>
+</html>
